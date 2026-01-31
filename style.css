@@ -127,6 +127,41 @@ body {
     }
 }
 
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+#rotating-text.slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+#rotating-text.slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+
 /* Category Grid */
 .categories {
     padding: 8rem 2rem;
