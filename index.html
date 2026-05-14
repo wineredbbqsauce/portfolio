@@ -1,282 +1,508 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aleks — justaleksstr.no</title>
 
-    <!doctype html>
-    <html lang="no">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portefølje</title>
-        <link rel="icon" type="icon" href="assets/placeholders/placeholder-circle.png" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css">
-      </head>
-      <body>
-        <!-- Hero Section -->
-        <section class="hero">  
-          <div class="hero-content">
-            <h1>Portefølje</h1>
-            <p class="subtitle">Kreativitet møter teknologi</p>
-            <p class="description" id="rotating-text">Laster<span id="dots"></span>
-            </p>
-          </div>
-          <div class="scroll-indicator">Rull ned for å utforske ↓</div>
-        </section>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="icon"
+      href="assets/placeholders/placeholder-circle.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <a href="#" class="logo-dot"></a>
+        <a href="#">just aleks</a>
+      </div>
 
-        <!-- Categories Section -->
-        <section class="categories">
-          <h2 class="section-title">Mine Kompetanseområder</h2>
-          <p class="section-subtitle">
-            Med kompetanse innen flere felt kombinerer jeg praktiske ferdigheter
-            med teknisk kunnskap.
-          </p>
+      <nav>
+        <a href="#projects">Prosjekter</a>
+        <a href="#interests">Interesser</a>
+        <a href="#about">Om meg</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
 
-          <div class="category-grid">
-            <!-- Mat -->
-            <div class="category-card">
-              <div class="category-icon">🍳</div>
-              <div class="category-content">
-                <h3 class="category-title">Mat & Kulinarisk</h3>
-                <p class="category-description">
-                  Erfaring fra profesjonelle kjøkken med fokus på trivsel,
-                  samarbeid og serviceinnstilling. Solid forståelse for
-                  matkultur og kundeopplevelse.
-                </p>
-                <div class="category-tags">
-                  <span class="tag">Matlaging</span>
-                  <span class="tag">Kundeservice</span>
-                  <span class="tag">Teamarbeid</span>
-                  <span class="tag">Bartending</span>
+      <div class="header-right">
+        <a
+          href="https://github.com/wineredbbqsauce"
+          target="_blank"
+          title="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider"></span>
+          <img
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAQABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAIxAAAgIABQQDAAAAAAAAAAAAAQMCBAAREiExBUFRcROBsf/EABQBAQAAAAAAAAAAAAAAAAAAAAX/xAAWEQADAAAAAAAAAAAAAAAAAAAAEiL/2gAMAwEAAhEDEQA/AMBTp03dNglMVuttjqnKQ2UPOfntkOThbqVVUJ12BKnogZQZpy+Ucc8knwePWJrWqyqEHVmrTahEBqpbBoAH1n635wt3a9mjN1p8X2pw0qVEbKB/CO/c4OphSVP/2Q=="
+            class="on"
+          />
+          <img
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAQABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIEBf/EACMQAAEDAwQDAQEAAAAAAAAAAAQBAgUDESEAEjFBBlFhMkL/xAAUAQEAAAAAAAAAAAAAAAAAAAAF/8QAGBEAAwEBAAAAAAAAAAAAAAAAABIiMUH/2gAMAwEAAhEDEQA/AM+Bg4mS8coRccMOdNG01qVyH/kRvHPKKmMdr8uujPwUTG+NkRpw1AKWCbvHKa2zTGphc9u9p0q+rLqeMl4kSCGkYgtoE0HTahIz3bWGNanPrdyqWzn7p5ibh5CArnyZNMyVLpK0QSkt2BNXtVX+7ol1wuLJiyaHt+6Kyp//2Q=="
+            class="off"
+          />
+        </label>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <i class="fas fa-circle"></i>
+          tilgjengelig for prosjekter
+        </div>
+
+        <h1 class="hero-name">Hællæ, jeg er<br /><span>Aleks</span></h1>
+
+        <p class="hero-sub">
+          Jeg har kraftig fritidsproblemer — Gjør alt fra å lage websider til
+          random prosjekter jeg finner på midt på natta, til å løpe etter
+          blader.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-code"></i> Se prosjekter
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <i class="fas fa-paper-plane"></i> Ta kontakt
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- INTERESTS -->
+    <section id="interests">
+      <div class="container">
+        <span class="section-label reveal">// interesser</span>
+        <h2 class="section-title reveal">Hva jeg holder på med</h2>
+        <p class="section-desc reveal">
+          Klikk for å se mer — eller ikke, det er helt greit det også.
+        </p>
+
+        <div class="interests-grid">
+          <!-- RAD 1 -->
+          <div class="interests-row">
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">💻</div>
+                  <span class="interest-title">Programmering</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Begynte med Python, dablet i JavaScript, og nå er det ikke til
+                  å stoppe. Liker backend mest, men frontend er gøy når det
+                  faktisk ser bra ut. Nysgjerrig av natur — prøver gjerne noe
+                  nytt bare for å skjønne hvordan det funker.
                 </div>
               </div>
             </div>
 
-            <!-- IT -->
-            <div class="category-card">
-              <div class="category-icon">💻</div>
-              <div class="category-content">
-                <h3 class="category-title">IT & Programmering</h3>
-                <p class="category-description">
-                  Tekniske ferdigheter innen webutvikling og programmering.
-                  HTML, CSS, JavaScript, Python og IT-drift. Problemløsning og
-                  utvikling av digitale løsninger.
-                </p>
-                <div class="category-tags">
-                  <span class="tag">HTML/CSS/JS</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">IT-Drift</span>
-                  <span class="tag">Utvikling</span>
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🍳</div>
+                  <span class="interest-title">Matlaging & kosthold</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  GitHub-brukernavnet sier litt. Lager mat hver dag — og er
+                  faktisk opptatt av hva som går inn i kroppen. Kosthold er ikke
+                  bare diett, det er nysgjerrighet. Hva gjør denne ingrediensen?
+                  Kan jeg gjøre det bedre? Prøver nye oppskrifter oftere enn jeg
+                  prøver nye programmeringsspråk.
                 </div>
               </div>
             </div>
 
-            <!-- Media & Teknikk -->
-            <div class="category-card">
-              <div class="category-icon">🎬</div>
-              <div class="category-content">
-                <h3 class="category-title">Media & Teknikk</h3>
-                <p class="category-description">
-                  Kombinasjon av kreativ produksjon og teknisk kompetanse.
-                  Erfaring med medieproduksjon, redigering og teknisk utstyr.
-                </p>
-                <div class="category-tags">
-                  <span class="tag">Medieproduksjon</span>
-                  <span class="tag">Redigering</span>
-                  <span class="tag">Teknisk utstyr</span>
-                  <span class="tag">Produksjon</span>
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🔥</div>
+                  <span class="interest-title">Pyromania (kontrollert)</span>
                 </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="projects">
-          <h2 class="section-title">Mine Prosjekter</h2>
-          <p class="section-subtitle">
-            Her er noen av prosjektene jeg har jobbet med
-          </p>
-
-          <div class="projects-grid">
-<!--
-
-              Web Prosjekt
-
--->
-            <div class="project-card">
-              <div class="project-image">
-                <img
-                  src="assets/placeholders/placeholder.png"
-                  alt="Web Prosjekt"
-                />
-                <div class="project-details">
-                  <p class="project-description">
-                    Utviklet en responsiv nettside med moderne design,
-                    interaktive elementer og optimalisert brukeropplevelse.
-                  </p>
-                  <div class="project-tags">
-                    <span class="tag">HTML/CSS</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Webutvikling</span>
-                  </div>
-                  <a href="#" class="project-link">Se detaljer</a>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Ja, jeg liker å sette ting på fyr. Kontrollert, selvsagt. Det
+                  er noe med fysikken bak flammer — hvordan de beveger seg, hva
+                  som brenner og hvorfor. Ikke bekymre deg, det er ingen
+                  serverpark som har gått opp i røyk. Ennå.
                 </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Nettbutikk Prosjekt</h3>
-              </div>
-            </div>
-<!--
-
-              Python Prosjekt
-
--->
-            <div class="project-card">
-              <div class="project-image">
-                <img
-                  src="assets/placeholders/placeholder.png"
-                  alt="Python Prosjekt"
-                />
-                <div class="project-details">
-                  <p class="project-description">
-                    Automatiseringsløsning som effektiviserer arbeidsprosesser
-                    og håndterer databehandling sømløst.
-                  </p>
-                  <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Automatisering</span>
-                    <span class="tag">Backend</span>
-                  </div>
-                  <a href="#" class="project-link">Se detaljer</a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Pong.py</h3>
-              </div>
-            </div>
-<!--
-
-              Media Prosjekt
-
--->
-            <div class="project-card">
-              <div class="project-image">
-                <img
-                  src="assets/placeholders/placeholder.png"
-                  alt="Media Prosjekt"
-                />
-                <div class="project-details">
-                  <p class="project-description">
-                    Komplett medieproduksjon fra konsept til ferdig produkt,
-                    inkludert filming, redigering og postproduksjon.
-                  </p>
-                  <div class="project-tags">
-                    <span class="tag">Videoredigering</span>
-                    <span class="tag">Produksjon</span>
-                    <span class="tag">Media</span>
-                  </div>
-                  <a href="#" class="project-link">Se detaljer</a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Mediaprosjekt</h3>
-              </div>
-            </div>
-<!--
-
-              DATABASE PROSJEKT
-
--->
-            <div class="project-card">
-              <div class="project-image">
-                <img
-                  src="assets/placeholders/placeholder.png"
-                  alt="Database Prosjekt"
-                />
-                <div class="project-details">
-                  <p class="project-description">
-                    Digital løsning for strukturering og organisering av data
-                    med effektiv søkefunksjonalitet.
-                  </p>
-                  <div class="project-tags">
-                    <span class="tag">Database</span>
-                    <span class="tag">Organisering</span>
-                    <span class="tag">Backend</span>
-                  </div>
-                  <a href="#" class="project-link">Se detaljer</a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Prosjekter under arbeid</h3>
               </div>
             </div>
           </div>
-        </section>
 
-        <!-- About Section -->
-        <section class="about">
-          <div class="about-content">
-            <h2>Om Meg</h2>
-            <p>
-              Jeg er en engasjert person med bred erfaring på tvers av flere
-              felt. Min bakgrunn kombinerer praktiske ferdigheter med teknisk
-              kompetanse.
-            </p>
-            <p>
-              Gjennom ulike roller har jeg utviklet sterke samarbeidsevner,
-              kommunikasjonsferdigheter og evnen til å jobbe strukturert under
-              press. Jeg bringer både kreativitet og teknisk presisjon til alle
-              prosjekter.
-            </p>
-            <p>
-              Min styrke ligger i evnen til å se sammenhenger mellom det
-              kreative og det tekniske – og å skape løsninger som fungerer.
-            </p>
+          <!-- RAD 2 -->
+          <div class="interests-row">
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🎮</div>
+                  <span class="interest-title">Gaming</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Spiller litt av alt — men mest det som tar for mye tid. Gaming
+                  er også grunnen til at jeg begynte å programmere. Ville alltid
+                  forstå hva som skjer under panseret.
+                </div>
+              </div>
+            </div>
 
-            <div class="skills-list">
-              <div class="skill-item">
-                <h3>Kommunikasjon</h3>
-                <p>Erfaring med kundeservice og teamarbeid</p>
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🎵</div>
+                  <span class="interest-title">Musikk</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
               </div>
-              <div class="skill-item">
-                <h3>Teknisk kompetanse</h3>
-                <p>Programmering og IT-systemer</p>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Alltid musikk på ørene. Kodet til 90% av alt jeg har laget.
+                  Liker bredt — pop når det skal konsentreres, noe mer energisk
+                  når det trengs fart. Katy Perry slår aldri feil. Skulle likt å
+                  tro at jeg spiller litt selv, men det er ikke noe konsert av
+                  det akkurat.
+                </div>
               </div>
-              <div class="skill-item">
-                <h3>Problemløsning</h3>
-                <p>Strukturert og fleksibel tilnærming</p>
+            </div>
+
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🌍</div>
+                  <span class="interest-title">Reising & friluftsliv</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
               </div>
-              <div class="skill-item">
-                <h3>Samarbeid</h3>
-                <p>Trives i profesjonelle team</p>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Ny sted, nytt perspektiv. Liker å utforske — enten det er en
+                  ny by, en sti i skogen, eller bare et sted jeg aldri har vært.
+                  Nysgjerrighet er driveren, både på reise og foran PC-en.
+                </div>
               </div>
             </div>
           </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section class="contact">
-          <h2>Interessert i samarbeid?</h2>
-          <p>
-            Ta gjerne kontakt for prosjekter, jobbtilbud eller spørsmål om mine
-            kompetanser.
-          </p>
-          <div class="contact-buttons">
-            <a href="mailto:din.epost@example.com" class="btn btn-primary"
-              >Send e-post</a
+          <!-- RAD 3 -->
+          <div class="interests-row">
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🚗</div>
+                  <span class="interest-title">Bil & mekanikk</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Biler er bare elektronikk og mekanikk pakket inn i plast og
+                  stål. Liker å skjønne hvordan ting henger sammen — enten det
+                  er en motor eller en server. Debugging er debugging, uansett
+                  om det er kode eller en motor som ikke starter.
+                </div>
+              </div>
+            </div>
+
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">📸</div>
+                  <span class="interest-title">Fotografi</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Liker å fange øyeblikk — enten det er natur, mat eller bare
+                  noe som ser kult ut der og da. Fotografi og koding har mer til
+                  felles enn folk tror: begge handler om å se ting fra riktig
+                  vinkel.
+                </div>
+              </div>
+            </div>
+
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🤝</div>
+                  <span class="interest-title">Folk & nye bekjentskaper</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Trives godt med folk. Liker å jobbe sammen, høre andres
+                  historier og skape noe med andre. Nye bekjentskaper er
+                  egentlig bare nye perspektiver man ikke hadde fra før — og det
+                  er alltid verdt det.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RAD 4 -->
+          <div class="interests-row">
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🎬</div>
+                  <span class="interest-title">Film & serier</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  God historiefortelling er god historiefortelling — uansett
+                  medium. Liker alt fra rolig drama til noe som krever full
+                  konsentrasjon. Favorittøyeblikket er når man ikke skjønner
+                  slutten før den er der.
+                </div>
+              </div>
+            </div>
+
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">🔧</div>
+                  <span class="interest-title">Elektronikk & DIY</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Ubuntu, bash-scripts, selfhosting, LAN-servere og litt lodding
+                  på toppen. Liker å bygge og fikse ting med hendene like mye
+                  som med tastaturet. Har brukt altfor mange timer på å debugge
+                  nettverksting som viste seg å være en skrivefeil i en
+                  config-fil.
+                </div>
+              </div>
+            </div>
+
+            <div class="interest-card reveal">
+              <div class="interest-header" onclick="toggleInterest(this)">
+                <div class="interest-left">
+                  <div class="interest-emoji">📚</div>
+                  <span class="interest-title">Matte & læring</span>
+                </div>
+                <i class="fas fa-chevron-down interest-chevron"></i>
+              </div>
+              <div class="interest-body">
+                <div class="interest-content">
+                  Ikke nødvendigvis flink i matte, men fascinert av det. Liker å
+                  skjønne hvordan ting fungerer — ikke gjennom kurs og pensum,
+                  men ved å bare bygge noe og se hva som går galt. Feilmeldinger
+                  er egentlig bare gratis undervisning.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <span class="section-label reveal">// prosjekter</span>
+        <h2 class="section-title reveal">Ting jeg har bygget</h2>
+        <p class="section-desc reveal">
+          Noen skoleoppgaver, noen ideer jeg ikke klarte å la ligge.
+        </p>
+
+        <div class="projects-grid">
+          <div class="project-card reveal">
+            <div class="project-icon">🛒</div>
+            <div class="project-name">Section — Nettbutikk</div>
+            <p class="project-desc">
+              En fullstack nettbutikk med Flask, SQLite, brukerinnlogging,
+              handlekurv og produktadmin. Startet som skoleoppgave, ble faktisk
+              ganske bra.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-icon">🌐</div>
+            <div class="project-name">justaleksstr.no</div>
+            <p class="project-desc">
+              Denne siden her! Portefølje og personlig nettside. Rein
+              HTML/CSS/JS, ingen rammeverk, bare vibes.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-icon">📸</div>
+            <div class="project-name">Bildegalleri</div>
+            <p class="project-desc">
+              Et personlig fotogalleri med bilder jeg har tatt selv. Alt fra
+              solnedganger og bymiljø til tilfeldige øyeblikk jeg ikke klarte å
+              la passere uten å ta frem kameraet.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Fotografi</span>
+            </div>
+            <a
+              href="sides/gallery/gallery.html"
+              class="btn btn-ghost"
+              style="margin-top: 1rem; font-size: 0.8rem; z-index: 2"
             >
-            <a href="#" class="btn btn-secondary">Last ned CV</a>
+              <i class="fas fa-images"></i> Se galleriet
+            </a>
           </div>
-        </section>
 
-        <!-- Footer -->
-        <footer>
-          <p>&copy; 2026 Portefølje. Utviklet koffein og tvilsomme avgjørelser.</p>
-        </footer>
+          <div class="project-card reveal">
+            <div class="project-icon">⚙️</div>
+            <div class="project-name">Neste prosjekt...</div>
+            <p class="project-desc">
+              Ideen er der et sted. Venter bare på at motivasjonen og energien
+              treffer på samme dag.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Kommer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <script src="script.js"></script>
-      </body>
-    </html>
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <span class="section-label">// om meg</span>
+            <h2 class="section-title">Bare Aleks.</h2>
+            <p>
+              Jeg er en <strong>norsk utvikler</strong> som liker å bygge ting
+              på nettet. Startet med koding fordi jeg var nysgjerrig, fortsetter
+              fordi det faktisk er gøy.
+            </p>
+            <p>
+              Mest komfortabel i <strong>Python</strong> på backend, og skrur
+              sammen frontend som funker bra nok til at jeg er fornøyd med det
+              eller hvis fristen er inne. Jobber med Linux og selfhosting på
+              fritiden, samt med masseee matlaging.
+            </p>
+            <p>
+              Går på skole, bygger prosjekter,
+              <strong>"kjeder meg ikke"</strong> — se GitHub-beskrivelsen min
+              for ytterligere kommentar.
+            </p>
+            <br />
+            <a
+              href="https://github.com/wineredbbqsauce"
+              class="btn btn-ghost"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> Se GitHub
+            </a>
+          </div>
+
+          <div class="stats-grid reveal">
+            <div class="stat-card">
+              <span class="stat-num">1+</span>
+              <span class="stat-label">År med koding</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">∞ +</span>
+              <span class="stat-label">Feilmeldinger fikset</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">1</span>
+              <span class="stat-label">Aktiv server på LAN</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">Litt for mye</span>
+              <span class="stat-label">Kaffe per kodesession</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <span class="section-label">// kontakt</span>
+          <h3>La oss snakke!</h3>
+          <p>
+            Har du et prosjekt, en idé, eller bare vil si hei — send gjerne en
+            melding. Svarer som regel raskt.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:hei@justaleksstr.no" class="btn btn-primary">
+              <i class="fas fa-envelope"></i> hei@justaleksstr.no
+            </a>
+            <a
+              href="https://github.com/wineredbbqsauce"
+              class="btn btn-ghost"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        Bygget med <span>♥</span> og altfor mange tabs åpne — justaleksstr.no
+      </p>
+    </footer>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
