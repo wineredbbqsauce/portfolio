@@ -181,6 +181,21 @@ nav a:hover::after {
     transform: translateY(-2px);
 }
 
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
+
 /* Minecraft switch made by: csozi | Website: english.csozi.hu*/
 
 /* The switch - the box around the slider */
@@ -190,11 +205,13 @@ nav a:hover::after {
     display: inline-block;
     width: 4em;
     height: 2em;
+    overflow: visible;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-    opacity: 1;
+    position: absolute;
+    opacity: 0;
     width: 0;
     height: 0;
 }
@@ -234,6 +251,13 @@ nav a:hover::after {
     image-rendering: pixelated;
     opacity: 0;
     border-radius: 10px;
+}
+
+.on,
+.off {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .switch input:checked+.slider {

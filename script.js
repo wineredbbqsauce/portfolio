@@ -1,16 +1,27 @@
 // Dropdown interests
 function toggleInterest(header) {
   const card = header.closest(".interest-card");
-  const row = card.closest(".interests-row");
-  const isOpen = card.classList.contains("open");
+  const isMobile = window.innerWidth <= 768;
 
-  row
-    .querySelectorAll(".interest-card")
-    .forEach((c) => c.classList.remove("open"));
-  if (!isOpen)
+  if (isMobile) {
+    // på mobil; åpne / lukke bare det kortet som klikkes
+    const isOpen = card.classList.contains("open");
+    document
+      .querySelectorAll(".interest-card.open")
+      .forEach((c) => c.classList.remove("open"));
+    if (!isOpen) card.classList.add("open");
+  } else {
+    // PÅ dekstop åpne hele rad
+    const row = card.closest(".interests-row");
+    const isOpen = card.classList.contains("open");
     row
       .querySelectorAll(".interest-card")
-      .forEach((c) => c.classList.add("open"));
+      .forEach((c) => c.classList.remove("open"));
+    if (!isOpen)
+      row
+        .querySelectorAll(".interest-card")
+        .forEach((c) => c.classList.add("open"));
+  }
 }
 
 // Scroll reveal
@@ -33,3 +44,21 @@ const observer = new IntersectionObserver(
 );
 
 reveals.forEach((el) => observer.observe(el));
+
+// Hamburger
+const hamburger = document.getElementById("hamburger");
+const nav = document.querySelector("nav");
+
+if (hamburger && nav) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    nav.classList.toggle("open");
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      nav.classList.remove("open");
+    });
+  });
+}
