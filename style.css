@@ -855,6 +855,26 @@ footer span {
 
     nav {
         display: none;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 15, 0.97);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        z-index: 99;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        font-size: 1rem;
     }
 
     .about-grid {
@@ -863,5 +883,35 @@ footer span {
 
     .hero-name {
         font-size: 3rem;
+    }
+
+    .header-right {
+        gap: 0.6rem;
+    }
+
+    .switch {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 15, 0.97);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        z-index: 99;
+    }
+
+    nav.open {
+        display: flex;
     }
 }
